@@ -21,11 +21,7 @@ class DataBase {
 
 	public function GetUserInfoById($id) {
 		$res = $this->DBquery('SELECT  name, email FROM users WHERE id = ' . $id);
-		while ($row = $res->fetch_assoc()) {
-				$userInfo[] = $row;
-
-			}
-		return $userInfo;
+		return $res->fetch_assoc();
 
 	}
 
